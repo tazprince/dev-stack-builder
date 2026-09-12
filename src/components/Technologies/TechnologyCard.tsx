@@ -1,17 +1,21 @@
 import type { Technology } from "../../types/Technology";
 
 export interface TechnologyCardProps {
-    technology: Technology;
+  technology: Technology;
+  stack: Technology[];
+  handleAddToStack: (technology: Technology) => void;
 }
 
-export default function TechnologyCard({ technology }: TechnologyCardProps) {
-    
-    return (
+export default function TechnologyCard({
+  technology,
+  stack,
+  handleAddToStack,
+}: TechnologyCardProps) {
+  const alreadyAdded = stack.find((item) => item.id === technology.id);
+  return (
     <div className=" flex  flex-col rounded-xl border border-gray-200 bg-white p-3 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md">
-      
       {/* Icon + Badge */}
       <div className="flex items-start justify-between">
-        
         <div className="flex h-8 w-8 items-center justify-center">
           <img
             src={technology.icon}
@@ -31,37 +35,39 @@ export default function TechnologyCard({ technology }: TechnologyCardProps) {
       </h3>
 
       {/* Description */}
-      <p className="mt-2 text-[11px] text-gray-500">
-        {technology.description}
-      </p>
+      <p className="mt-2 text-[11px] text-gray-500">{technology.description}</p>
 
       {/* Bottom content */}
       <div className="mt-7.5">
-
         {/* Category + Level + Rating */}
         <div className="mt-3 flex items-center justify-between">
-         
-          
           <span className="rounded bg-gray-100 px-2 py-1 text-[9px] text-gray-500">
             {technology.category}
           </span>
 
-            <span className="text-[9.5px] text-gray-500">
-              {technology.difficulty}
-            </span>
+          <span className="text-[9.5px] text-gray-500">
+            {technology.difficulty}
+          </span>
 
-            <span className="text-[9.5px] font-medium text-gray-700">
-              ⭐ {technology.rating}
-            </span>
-
+          <span className="text-[9.5px] font-medium text-gray-700">
+            ⭐ {technology.rating}
+          </span>
         </div>
 
         {/* Add Button */}
-        <button className="mt-3 w-full rounded-md py-2 text-[9px] transition font-medium text-white bg-black">
-            Added to Stack
+        <button
+          onClick={() => handleAddToStack(technology)}
+          disabled={alreadyAdded}
+          className={`mt-3 w-full rounded-md py-2 text-[9px] font-medium transition ${
+            alreadyAdded
+              ? "cursor-not-allowed bg-green-50 text-green-600"
+              : "bg-[#080D1A] text-white hover:bg-gray-800"
+          }`}
+        >
+          {alreadyAdded
+            ? "Added to Stack ✓"
+            : "Add to Stack"}
         </button>
-
-
       </div>
     </div>
   );
