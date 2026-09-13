@@ -4,6 +4,7 @@ import Banner from "./components/Banner/Banner";
 import Navbar from "./components/Navbar/Navbar";
 import Technologies from "./components/Technologies/Technologies";
 import type { Technology } from "./types/Technology";
+import Footer from "./components/Footer/Footer";
 
 const technologiesFetch = async (): Promise<Technology[]> => {
   const response = await fetch("/public/data.json");
@@ -46,6 +47,7 @@ function App() {
           handleRemoveAll={handleRemoveAll}
         ></Technologies>
       </Suspense>
+      <Footer></Footer>
     </>
   );
 }
