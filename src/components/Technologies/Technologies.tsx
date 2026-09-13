@@ -21,10 +21,10 @@ export default function Technologies({
   const technologies = use(technologiesPromise);
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <section className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
       {/* Heading */}
-      <div className="mb-7">
-        <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">
+      <div className="mb-10">
+        <h2 className="pb-1 text-2xl font-extrabold text-gray-900 sm:text-3xl">
           Explore the <span className="text-[#EC4899]">Technologies</span>
         </h2>
 

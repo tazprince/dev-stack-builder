@@ -17,7 +17,7 @@ const Banner = () => {
             them side by side, and put together the stack that fits your <br />next
             project
           </p>
-          <div className="flex gap-3 mt-7 justify-center md:justify-start">
+          <div className="flex gap-3 mt-10 justify-center md:justify-start">
             <button className="flex-1 md:flex-none px-4 py-2 rounded-md text-sm text-white bg-linear-to-r from-orange-500 to-pink-500">
               Explore Technologies
             </button>
@@ -28,7 +28,7 @@ const Banner = () => {
         </div>
         {/* right side */}
         <div className="w-full md:w-[50%] flex justify-center mt-10 md:mt-0">
-          <img src={BannerImg} alt="banner-stack" className="w-100" />
+          <img src={BannerImg} alt="banner-stack" className="w-130" />
         </div>
       </div>
     </section>

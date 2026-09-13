@@ -38,7 +38,7 @@ function App() {
     <>
       <Navbar></Navbar>
       <Banner></Banner>
-      <Suspense fallback={<h2 className="flex justify-center">Loading technologies...</h2>}>
+      <Suspense fallback={<h2 className="flex justify-center text-gray-400">Loading technologies...</h2>}>
         <Technologies
           technologiesPromise={technologiesPromise}
           stack={stack}

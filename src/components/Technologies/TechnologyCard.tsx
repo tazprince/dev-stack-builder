@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import type { Technology } from "../../types/Technology";
 
 export interface TechnologyCardProps {
@@ -11,7 +12,20 @@ export default function TechnologyCard({
   stack,
   handleAddToStack,
 }: TechnologyCardProps) {
-  const alreadyAdded = stack.find((item) => item.id === technology.id);
+
+  const alreadyAdded = stack.some((item) => item.id === technology.id);
+
+  const handleAdd = () => {
+    if (alreadyAdded) {
+      //Toast
+      toast.error(`${technology.name} is already in your stack!`);
+      return;
+    }
+
+    handleAddToStack(technology);
+
+    toast.success(`${technology.name} added to your stack!`);
+  };
   return (
     <div className=" flex  flex-col rounded-xl border border-gray-200 bg-white p-3 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md">
       {/* Icon + Badge */}
@@ -56,16 +70,16 @@ export default function TechnologyCard({
 
         {/* Add Button */}
         <button
-          onClick={() => handleAddToStack(technology)}
+          onClick={handleAdd}
           disabled={alreadyAdded}
           className={`mt-3 w-full rounded-md py-2 text-[9px] font-medium transition ${
             alreadyAdded
-              ? "cursor-not-allowed bg-green-50 text-green-600"
+              ? "cursor-not-allowed bg-green-50 text-pink-500"
               : "bg-[#080D1A] text-white hover:bg-gray-800"
           }`}
         >
           {alreadyAdded
-            ? "Added to Stack ✓"
+            ? "✓ Added to Stack"
             : "Add to Stack"}
         </button>
       </div>

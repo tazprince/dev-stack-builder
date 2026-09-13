@@ -73,7 +73,7 @@ const Footer = () => {
             <h3 className="text-xs font-bold uppercase text-gray-900">
               Company
             </h3>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-4 ">
               <li>
                 <a
                   href=""
