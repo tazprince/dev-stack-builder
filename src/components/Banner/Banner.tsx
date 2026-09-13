@@ -13,8 +13,8 @@ const Banner = () => {
             </span>
           </h1>
           <p className="mt-4 max-w-md text-sm text-gray-500 text-center md:text-left mx auto md:mx-0">
-            Explore frontend, backend, database, and tooling options, compare
-            them side by side, and put together the stack that fits your next
+            Explore frontend, backend, database, and tooling options,<br /> compare
+            them side by side, and put together the stack that fits your <br />next
             project
           </p>
           <div className="flex gap-3 mt-7 justify-center md:justify-start">

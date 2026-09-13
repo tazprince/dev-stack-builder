@@ -7,7 +7,7 @@ export interface TechnologiesProps {
   technologiesPromise: Promise<Technology[]>;
   stack: Technology[];
   handleAddToStack: (technology: Technology) => void;
-  handleRemoveFromStack: (id: number) => void;
+  handleRemoveFromStack: (id: string) => void;
   handleRemoveAll: () => void;
 }
 

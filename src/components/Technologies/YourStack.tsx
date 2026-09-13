@@ -2,7 +2,7 @@ import type { Technology } from "../../types/Technology";
 
 export interface YourStackProps {
   stack: Technology[];
-  handleRemoveFromStack: (id: number) => void;
+  handleRemoveFromStack: (id: string) => void;
   handleRemoveAll: () => void;
 }
 
